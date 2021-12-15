@@ -17,7 +17,6 @@ def get_authorization_code():
     code = input("pls input authorization code: ")
     return code
 
-
 def get_access_token(app_id,app_secret,authorization_code,call_back):
     url = "https://tower.im/oauth/token"
     response = requests.post(url,
@@ -29,7 +28,6 @@ def get_access_token(app_id,app_secret,authorization_code,call_back):
                 'redirect_uri':call_back
                 })
     return response.text
-
 
 if os.path.exists(access_token_file_name):
     print("get existed access code")
